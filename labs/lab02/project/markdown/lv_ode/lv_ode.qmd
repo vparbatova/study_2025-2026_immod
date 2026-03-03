@@ -232,17 +232,7 @@ color=[:green :red])
 ```{julia}
 function compute_fft(signal, dt)
 n = length(signal)
-```
-
-Используем rfft для вещественных сигналов (возвращает только положительные частоты)
-
-```{julia}
 spectrum = abs.(rfft(signal))
-```
-
-Соответствующие частоты для rfft
-
-```{julia}
 freq = rfftfreq(n, 1/dt)
 spectrum = max.(spectrum, 1e-16)
 return freq, spectrum
@@ -252,10 +242,8 @@ end
 Вычисление периодов колебаний
 
 ```{julia}
-freq_prey, spectrum_prey = compute_fft(df_lv.prey .-
-mean(df_lv.prey), dt_lv)
-freq_predator, spectrum_predator = compute_fft(df_lv.predator .-
-mean(df_lv.predator), dt_lv)
+freq_prey, spectrum_prey = compute_fft(df_lv.prey .-mean(df_lv.prey), dt_lv)
+freq_predator, spectrum_predator = compute_fft(df_lv.predator .-mean(df_lv.predator), dt_lv)
 plt5 = plot(freq_prey, [spectrum_prey spectrum_predator],
 label=[L"Жертвы (x)" L"Хищники (y)"],
 xlabel="Частота",
@@ -389,11 +377,6 @@ function analyze_parameter_sensitivity(param_index, values, param_name)
         prey_end = sol_test.u[end][1]
         predator_end = sol_test.u[end][2]
         push!(results, (param=val, prey=prey_end, predator=predator_end))
-```
-
-ИСПРАВЛЕНО: добавляем digits=2
-
-```{julia}
         println(" $(param_name)=$(val): жертвы=$(round(prey_end; digits=2)), хищники=$(round(predator_end; digits=2))")
     end
     return results
