@@ -85,8 +85,6 @@ license: "CC BY"
 
 # Выполнение лабораторной работы
 
-{{< include ../project/markdown/daisyworld/daisyworld.qmd>}}
-
 Создаю файл, в котором будет храниться информация об агентах([рис. @fig-001])
 
 ![Создаю файл](image/1.png){#fig-001 width=70%}
@@ -103,6 +101,8 @@ license: "CC BY"
 
 ![Запуск файла](image/4.png){#fig-004 width=70%}
 
+Так делаю со всеми файлами из лабораторной
+
 В результате работы файла были созданы 3 графика, которые отображают расположение чёрных и белых незабудок и температуру вокруг них. Начальное состояние изображено на первом графике ([рис. @fig-005])
 
 ![Начальное состояние](image/5.png){#fig-005 width=70%}
@@ -114,6 +114,40 @@ license: "CC BY"
 Состояние через 40 единиц времени. Как можно заметить, вокруг незабудок каждого цвета сформировалась своя температура, которая нигде не достигает ни максимума, ни минимума, а незабудки заполнили все клеточки, свободных не осталось ([рис. @fig-007])
 
 ![Состояние через 40 единиц времени](image/7.png){#fig-007 width=70%}
+
+Анализ результатов и код из файлов предоставлен ниже.
+
+## Код и анализ daisyworld.gl
+
+{{< include ../project/markdown/daisyworld/daisyworld.qmd >}}
+
+## Код и анализ daisyworld-count.jl
+
+{{< include ../project/markdown/daisyworld-count/daisyworld-count.qmd >}}
+
+## Код и анализ daisyworld-luminosity.jl
+
+{{< include ../project/markdown/daisyworld-luminosity/daisyworld-luminosity.qmd >}}
+
+## Код и анализ daisyworld__param.jl
+
+{{< include ../project/markdown/daisyworld__param/daisyworld__param.qmd >}}
+
+## Код и анализ daisyworld-count__param.jl
+
+{{< include ../project/markdown/daisyworld-count__param/daisyworld-count__param.qmd >}}
+
+## Код и анализ daisyworld-luminosity__param.jl
+
+{{< include ../project/markdown/daisyworld-luminosity__param/daisyworld-luminosity__param.qmd >}}
+
+# Вывод
+
+В ходе выполнения лабораторной работы была успешно реализована и исследована агентная модель Daisyworld. 
+
+# Список литературы{.unnumbered}
+
+[Лабораторная работ №3. Агентное моделирование](https://esystem.rudn.ru/pluginfile.php/3094247/mod_resource/content/2/simulation-modeling-lab.pdf#chapter.3)
 
 # Выводы
 
